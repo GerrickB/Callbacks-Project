@@ -27,8 +27,11 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
-
+let exactly = function(array, num, cb) {
+    let filtered = array.filter((item) => {
+        return cb(item);
+    });
+    return filtered.length === num;
 };
 
 
