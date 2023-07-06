@@ -19,8 +19,14 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
 console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
 
-let myFilter = function() {
-
+let myFilter = function(array, cb) {
+    let filtered = [];
+    array.forEach(function(item, index) {
+        if (cb(item, index, array) === true) {
+            filtered.push(item);
+        }
+    });
+    return filtered;
 };
 
 
